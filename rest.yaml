@@ -1,0 +1,10 @@
+  scan_interval: 5
+  resource_template: "http://192.168.10.157:7125/server/files/metadata?filename={{ states(('sensor.sv01pro_current_print')) }}"
+  sensor:
+    - name: sv01pro_file_metadata
+      json_attributes_path: "$.result"
+      json_attributes:
+        - layer_height
+        - object_height
+        - thumbnails
+      value_template: "OK"

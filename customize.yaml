@@ -1,0 +1,22 @@
+sensor.sv01pro_mcu_actual:
+  state_class: measurement
+sensor.sv01pro_rpi_actual:
+  state_class: measurement
+sensor.sv01pro_bedtemp:
+  state_class: measurement
+sensor.sv01pro_nozzletemp:
+  state_class: measurement
+sensor.sv01pro_hotend_actual:
+  state_class: measurement
+sensor.sv01pro_hotend_target:
+  state_class: measurement
+sensor.sv01pro_bed_target:
+  state_class: measurement
+sensor.sv01pro_bed_actual:
+  state_class: measurement
+sensor.sv01pro_hotend_power:
+ device_class: power_factor
+ state_class: measurement
+sensor.sv01pro_bed_power:
+ device_class: power_factor
+ state_class: measurement

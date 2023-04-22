@@ -1,0 +1,35 @@
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+mqtt: !include mqtt.yaml
+rest: !include rest.yaml
+
+rest_command:
+  sv01pro_emergency_stop:
+    url: "http://192.168.10.157:7125/printer/emergency_stop"
+    method: post
+  sv01pro_firmware_restart:
+    url: "http://192.168.10.157:7125/printer/firmware_restart"
+    method: post
+  sv01pro_cancel:
+    url: "http://192.168.10.157:7125/printer/print/cancel"
+    method: post
+  sv01pro_pause:
+    url: "http://192.168.10.157:7125/printer/print/pause"
+    method: post
+  sv01pro_resume:
+    url: "http://192.168.10.157:7125/printer/print/resume"
+    method: post
+  sv01pro_caselight_on:
+    url: "http://192.168.10.157:7125/printer/gcode/script"
+    content_type: "application/json"
+    method: post
+    payload: '{"script":"LIGHT_ON"}'
+  sv01pro_caselight_off:
+    url: "http://192.168.10.157:7125/printer/gcode/script"
+    content_type: "application/json"
+    method: post
+    payload: '{"script":"LIGHT_OFF"}'

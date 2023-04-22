@@ -1,0 +1,18 @@
+alias: SV01pro printing finished
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.sv01pro_state
+    to: complete
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+    from: printing
+condition: []
+action:
+  - service: notify.mobile_app_iphonek
+    data:
+      message: Printer finished printing.
+mode: single

@@ -1,0 +1,19 @@
+  - platform: template
+    switches:
+      sv01pro_light:
+        icon_template: >-
+          {% if is_state('switch.sv01pro_light', 'on') %}
+            mdi:led-on
+          {% else %}
+            mdi:led-off
+          {% endif %}
+        value_template: >-
+          {{ 'on' if states('sensor.sv01pro_light_brightness') | int > 0 else 'off' }}
+        turn_on:
+           service: script.turn_on
+           target:
+             entity_id: script.sv01pro_caselight_on
+        turn_off:
+           service: script.turn_on
+           target:
+             entity_id: script.sv01pro_caselight_off
